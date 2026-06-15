@@ -1,0 +1,5 @@
+@EndUserText.label: 'Delivery - Service Definition'
+define service Z_ui_delivery {
+  expose zc_outbound_delivery;
+  expose zc_handling_units;
+}
