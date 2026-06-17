@@ -1,0 +1,5 @@
+CLASS zbp_i_handling_unit DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zi_outbound_delivery.
+ENDCLASS.
+
+CLASS zbp_i_handling_unit IMPLEMENTATION.
+ENDCLASS.

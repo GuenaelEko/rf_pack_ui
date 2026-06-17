@@ -1,0 +1,20 @@
+projection;
+strict ( 2 );
+
+define behavior for zc_outbound_delivery alias _Delivery
+{
+
+  use association _HandlingUnit { create; }
+}
+
+define behavior for zc_handling_units alias _HandlingUnit
+{
+  use create;
+  use delete;
+
+  use association _Delivery;
+}
+
+//define behavior for zc_handling_unit_item //alias <alias_name>
+//{
+//}

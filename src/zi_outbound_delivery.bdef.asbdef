@@ -1,0 +1,38 @@
+unmanaged implementation in class zbp_i_handling_unit unique;
+strict ( 2 );
+
+define behavior for zi_outbound_delivery alias _Delivery
+//late numbering
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( readonly ) DeliveryNumber;
+  association _HandlingUnit { create; }
+}
+
+define behavior for zi_handling_unit alias _HandlingUnit
+//late numbering
+lock dependent by _Delivery
+authorization dependent by _Delivery
+//etag master <field_name>
+{
+  create;
+  delete;
+  field ( readonly ) HUObject;
+  field ( readonly ) PackingObject;
+  field ( readonly ) PackagingMaterial;
+  field ( readonly : update ) HandlingUnitNumber;
+  association _Delivery;
+  //association _Item ;
+}
+
+/*define behavior for zi_handling_unit_item alias _Item
+ //late numbering
+ lock dependent by _HandlingUnit
+ authorization dependent by _HandlingUnit
+ //etag master <field_name>
+ {
+ field ( readonly ) HandlingUnitNumber;
+ association _HandlingUnit;
+ }*/

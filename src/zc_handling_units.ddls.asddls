@@ -28,12 +28,13 @@ define view entity zc_handling_units
       VolumeUnit,
       @Semantics.quantity.unitOfMeasure: 'VolumeUnit'
       TareWeight,
-      DeliveryNumber,
-      DeliveryItem,
-      Material,
-      @Semantics.quantity.unitOfMeasure: 'QuantityUnit'
-      Quantity,
-      QuantityUnit,
+      // DeliveryNumber,
+      // DeliveryItem,
+      // Material,
+      // @Semantics.quantity.unitOfMeasure: 'QuantityUnit'
+      // Quantity,
+      // QuantityUnit,
       /* Associations */
-      _Delivery: redirected to parent zc_outbound_delivery
+      _Delivery : redirected to parent zc_outbound_delivery,
+      _Item: redirected to composition child zc_handling_unit_item
 }
