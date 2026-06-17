@@ -19,9 +19,9 @@ authorization dependent by _Delivery
 {
   create;
   delete;
-  field ( readonly ) HUObject;
+  field ( readonly : update ) HUObject;
   field ( readonly ) PackingObject;
-  field ( readonly ) PackagingMaterial;
+  field ( readonly : update ) PackagingMaterial;
   field ( readonly : update ) HandlingUnitNumber;
   association _Delivery;
   //association _Item ;

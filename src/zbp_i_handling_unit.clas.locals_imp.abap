@@ -83,6 +83,12 @@ CLASS lhc__HandlingUnit IMPLEMENTATION.
         TABLES
           return         = lt_return.
 
+      IF sy-subrc = 0.
+        CALL FUNCTION 'BAPI_TRANSACTION_COMMIT' DESTINATION 'NONE'
+          EXPORTING
+            wait = 'X'.
+      ENDIF.
+
       " Check for errors from BAPI_HU_CREATE
       DATA lv_error TYPE abap_bool VALUE abap_false.
 
